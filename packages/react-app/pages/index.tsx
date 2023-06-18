@@ -8,7 +8,9 @@ import ProductList from "@/components/ProductList";
 export default function Home() {
   return (
     <div>
+        {/* Add product to the marketplace */}
         <AddProductModal />
+        {/* List products on the marketplace */}
         <ProductList />
     </div>
   )

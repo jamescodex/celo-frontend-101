@@ -1,5 +1,5 @@
 import Blockies from 'react-blockies';
-
+// Function that returns an Identicon template using the address given
 export const identiconTemplate = (address : string) => {
     return <Blockies size={10} // number of pixels square
     scale={4} // width/height of each 'pixel'
