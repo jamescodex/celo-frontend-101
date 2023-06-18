@@ -169,7 +169,7 @@ const AddProductModal = () => {
                       className="w-full bg-gray-100 p-2 mt-2 mb-3 font-mono"
                       
                     />
-
+                    {/* Product Image */}
                     <label>Image URL of Product</label>
                     <input
                       onChange={(e) => {
@@ -180,7 +180,7 @@ const AddProductModal = () => {
                       className="w-full bg-gray-100 p-2 mt-2 mb-3 font-mono"
                       
                     />
-
+                    {/* Product description */}
                     <label>Short description of Product</label>
                     <textarea
                       onChange={(e) => {
@@ -189,7 +189,7 @@ const AddProductModal = () => {
                       required
                       className="w-full bg-gray-100 p-2 mt-2 mb-3 font-mono"
                     />
-
+                    {/* Product location */}
                     <label>Location of Product</label>
                     <input
                       onChange={(e) => {
@@ -200,6 +200,7 @@ const AddProductModal = () => {
                       className="w-full bg-gray-100 p-2 mt-2 mb-3 font-mono"
                       
                     />
+                    {/* Product Price */}
                     <label>Price of Product (in cUSD)</label>
                     <input
                       onChange={(e) => {
