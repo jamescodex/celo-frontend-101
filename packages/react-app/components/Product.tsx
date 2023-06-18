@@ -178,10 +178,12 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
       <div className="border h-[50%] flex flex-col justify-between rounded p-2">
         <div className="flex gap-2">
           <div className="w-[70%]">
+            {/* Product Name */}
             <div className="text-purple-600 italic">Name</div>
             <div className="border rounded-sm p-2 font-mono font-semibold h-[60px] overflow-hidden text-ellipsis">{product.name}</div>
           </div>
           <div className="w-[30%] flex flex-col items-center">
+            {/* Product Creator */}
             <div className="text-purple-600 italic">Created By:</div>
             <Link
               href={`https://explorer.celo.org/alfajores/address/${product.owner}`}
@@ -191,11 +193,12 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
             </Link>
           </div>
         </div>
-
+        {/* Product Description */}
         <div className="">
           <div className="text-purple-600 italic">Description</div>
           <div className="border rounded-md p-2 font-mono font-semibold max-h-[100px] text-ellipsis overflow-hidden">{product.description}</div>
         </div>
+        {/* Product rating section */}
         <div className="border h-[75px] rounded flex flex-col">
           <div className="flex gap-4 h-[60px] justify-center items-center border">
             <StarIcon className="w-[40px] h-[35px] outline-1 hover:w-[45px] hover:h-[45px] text-yellow-400 cursor-pointer hover:-rotate-[145deg] transition duration-300 ease-in-out" onClick={async () => await rateProduct(Number(1))}/>
@@ -204,6 +207,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
             <StarIcon className="w-[40px] h-[35px] outline-1 hover:w-[45px] hover:h-[45px] text-yellow-400 cursor-pointer hover:-rotate-[145deg] transition duration-300 ease-in-out" onClick={async () => await rateProduct(Number(4))}/>
             <StarIcon className="w-[40px] h-[35px] outline-1 hover:w-[45px] hover:h-[45px] text-yellow-400 cursor-pointer hover:-rotate-[145deg] transition duration-300 ease-in-out" onClick={async () => await rateProduct(Number(5))}/>
           </div>
+          {/* Product Rate */}
           <div className="ml-2">
             Product rating: {product.rateCount/product.ratersCount}
           </div>
