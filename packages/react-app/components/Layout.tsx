@@ -5,6 +5,7 @@ import Header from "./Header";
 interface Props {
     children: ReactNode;
 }
+// This is the layout of our application
 const Layout: FC<Props> = ({ children }) => {
     return (
         <>
