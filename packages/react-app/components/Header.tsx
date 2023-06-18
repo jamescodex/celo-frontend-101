@@ -31,19 +31,6 @@ export default function Header() {
                 </div>
               </div>
             </div>
-  
-            <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 pt-2 pb-4">
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
-                >
-                  Home
-                </Disclosure.Button>
-                {/* Add here your custom menu elements */}
-              </div>
-            </Disclosure.Panel>
           </>
         )}
       </Disclosure>
