@@ -1,197 +1,54 @@
-<!-- TITLE -->
-<p align="center"> 
-  <img width="100px" src="https://github.com/celo-org/celo-composer/blob/main/images/readme/celo_isotype.svg" align="center" alt="Celo" />
- <h2 align="center">Celo Composer</h2>
- <p align="center">Build, deploy, and iterate quickly on decentralized applications using Celo.</p>
-</p>
-  <p align="center">
-    <a href="https://github.com/celo-org/celo-composer/graphs/stars">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/stars/celo-org/celo-composer?color=FCFF52" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/graphs/contributors">
-      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://github.com/celo-org/celo-composer/pulls">
-      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/celo-org/celo-composer?color=E7E3D4" />
-    </a>
-    <a href="https://opensource.org/license/mit/">
-      <img alt="MIT License" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-    </a>
-  </p>
-</p>
+# Celo Frontend 101
+![image](https://github.com/jamescodex/celo-frontend-101/assets/109129946/20ae211a-9ca6-43e4-9f4b-55a4bc4bb219)
 
-<!-- TABLE OF CONTENTS -->
+# Desciption
+My Celo Frontend 101 submission is about a marketplace dapp that allows users to create items in the marketplace and other users can come to buy those items. Users can also rate an item based on their satisfaction with the item on a 5-star rating system. The owner of the item automatically rates the item a 5 star during item creation.
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+# Feature
+1. View list of products in the marketplace
+2. Create new products in the marketplace
+3. Buy product from the marketplace
+4. Rate a product on the marketplace
+5. View the rating on a product in the marketplace
+ 
+# Tech Stack
+This web aplication uses the following tech stack:
+- [Solidity](https://docs.soliditylang.org/) - A programming language for Ethereum smart contracts.
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [Typescript](https://www.typescriptlang.org) - a strongly typed programming language that builds on JavaScript.
+- [Rainbowkit-celo](https://docs.celo.org/developer/rainbowkit-celo) - RainbowKit is a React library that makes it easy to add wallet connection to dapp.
+- [Wagmi](https://wagmi.sh) - wagmi is a collection of React Hooks containing everything you need to start working with Ethereum
+- [Hardhat](https://hardhat.org/) - A tool for writing and deploying smart contracts.
+- [TailwindCss](https://tailwindcss.com) - A CSS framework that dress up webpage.
 
-<!-- ABOUT THE PROJECT -->
+# Installation
+To run the application locally, follow these steps:
 
-## About The Project
+1. Clone the repository to your local machine using: ``` git clone https://github.com/jamescodex/celo-frontend-101.git ```
+2. Move into react-app folder: ``` cd celo-frontend-101/packages/react-app ```
+3. Install project dependencies: ``` npm install ``` or ``` yarn install ```
+4. Start project: ``` yarn run dev ``` or ``` npm run dev```
+5. Open the application in your web browser at ``` http://localhost:3000 ```
 
-Celo Composer allows you to quickly build, deploy, and iterate on decentralized applications using Celo. It provides a number of frameworks, examples, and Celo specific functionality to help you get started with your next dApp.
+# Usage
+[**Demo Link**](https://celo-frontend-101-react-app.vercel.app)
+1. Install a wallet: [MetamaskExtensionWallet](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
+2. Create a wallet.
+3. Go to [https://celo.org/developers/faucet](https://celo.org/developers/faucet) and get tokens for the alfajores testnet.
+4. Switch to the alfajores testnet.
+5. Connect yor wallet to the app.
+6. Create a product.
+7. Create a second account in your extension wallet.
+8. Buy product with secondary account.
+9. Check balance (Currently it is imposible to get cUSD from celo faucet, so buy product function will not success at all).
+10. Add another product.
+11. Rate a product in the marketplace
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+# Contributing
+1. Fork this repository
+2. Create a new branch for your changes: git checkout -b my-feature-branch
+3. Make your changes and commit them: git commit -m "feat: create new feature"
+4. Push your changes to your fork: git push origin my-feature-branch
+5. Open a pull request to this repository with a description of your changes
 
-## Built With
-
-Celo Composer is built on Celo to make it simple to build dApps using a variety of front-end frameworks, and libraries.
-
-- [Celo](https://celo.org/)
-- [Solidity](https://docs.soliditylang.org/en/v0.8.19/)
-- [Next.js](https://nextjs.org/)
-- [React.js](https://reactjs.org/)
-- [Material UI](https://mui.com/)
-- [React Native](https://reactnative.dev/)
-- [Flutter](https://docs.flutter.dev/)
-- [React-celo](https://github.com/celo-org/react-celo/)
-- [Rainbowkit-celo](https://github.com/celo-org/rainbowkit-celo)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## Prerequisites
-
-- Node
-- Git (v2.38 or higher)
-
-## How to use Celo Composer
-
-The easiest way to start with Celo Composer is using `@celo/celo-composer`. This CLI tool lets you quickly start building dApps on Celo for multiple frameworks, including React (with either react-celo or rainbowkit-celo), React Native (w/o Expo), Flutter, and Angular. To get started, just run the following command, and follow the steps:
-
-```bash
-npx @celo/celo-composer@latest create
-```
-
-### Front-end framework
-
-![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_1.png?raw=true)
-
-### Web3 library (for react-app)
-
-![Celo Composer select framework](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_2.png?raw=true)
-
-### Smart contract framework
-
-![Celo Composer tool selection](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_3.png?raw=true)
-
-### Subgraph
-
-![Celo Composer subgraph support](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_4.png?raw=true)
-
-### Name your dApp
-
-![Celo Composer dApp name](https://github.com/celo-org/celo-composer/blob/main/images/readme/cc_step_5.png?raw=true)
-
-**_🔥Voila, you have a dApp ready to go. Voila, you have a dApp ready to go. Start building your dApp on Celo._**
-
-### Getting started
-
-Once your custom dApp has been created, just install dependencies, either with `yarn` or `npm i`, and run the respective script from the `package.json` file.
-## Supported Frameworks
-
-### React
-
-- Support for Website and Progressive Web Application.
-- Works with all major crypto wallets.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-app/README.md) to learn more about.
-
-### React Native
-
-- Out of the box config, just focus on buidl.
-- Support for Android and IOS.
-- Works with and without [Expo](https://expo.dev/).
-- Working example app included.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/react-native-app/README.md) to learn more about.
-
-### Flutter
-
-- One command to get started - Type `flutter run` to start development in your mobile phone.
-- Works with all major mobile crypto wallets.
-- Support for Android, IOS (Web, Windows, and Linux coming soon).
-- Working example app included.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/flutter-app/README.md) to learn more about.
-
-### Angular
-
-- Support for Website and Progressive Web Application.
-- Works with all major crypto wallets.
-
-Check [package readme](https://github.com/celo-org/celo-composer/blob/main/packages/angular-app/README.md) to learn more about.
-
-<!-- USAGE EXAMPLES -->
-
-## 🔭 Learning Solidity
-
-📕 Read the docs: <https://docs.soliditylang.org>
-
-- [Primitive Data Types](https://solidity-by-example.org/primitives/)
-- [Mappings](https://solidity-by-example.org/mapping/)
-- [Structs](https://solidity-by-example.org/structs/)
-- [Modifiers](https://solidity-by-example.org/function-modifier/)
-- [Events](https://solidity-by-example.org/events/)
-- [Inheritance](https://solidity-by-example.org/inheritance/)
-- [Payable](https://solidity-by-example.org/payable/)
-- [Fallback](https://solidity-by-example.org/fallback/)
-
-📧 Learn the [Solidity globals and units](https://solidity.readthedocs.io/en/v0.8.19/units-and-global-variables.html)
-
-## Support
-
-Join the Celo Discord server at <https://chat.celo.org>. Reach out on the dedicated repo channel [here](https://discord.com/channels/600834479145353243/941003424298856448).
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-See the [open issues](https://github.com/celo-org/celo-composer/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-We welcome contributions from the community.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<!-- CONTACT -->
-## Contact
-
-- [@CeloDevs](https://twitter.com/CeloDevs)
-- [Discord](https://discord.com/invite/celo)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+Please make sure that your code follows the Solidity Style Guide and the React Style Guide. You can add tests for any new features or changes, also please make the front-end more friendly. I welcome any contributions or feedback on this project!
