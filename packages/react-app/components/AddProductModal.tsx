@@ -34,14 +34,8 @@ const AddProductModal = () => {
   const [debouncedProductLocation] = useDebounce(productLocation, 500);
   const [loading, setLoading] = useState("");
   const [displayBalance, setDisplayBalance] = useState(false);
-
-  // Check if all the input fields are filled
-  const isComplete =
-    productName &&
-    productPrice &&
-    productImage &&
-    productLocation &&
-    productDescription;
+  const [validationMessage, setValidationMessage] = useState("");
+ 
 
   // Clear the input fields after the product is added to the marketplace
   const clearForm = () => {
@@ -72,7 +66,6 @@ const AddProductModal = () => {
       throw "Failed to create product";
     }
     setLoading("Creating...");
-    if (!isComplete) throw new Error("Please fill all fields");
     // Create the product by calling the writeProduct function on the marketplace contract
     const purchaseTx = await createProduct();
     setLoading("Waiting for confirmation...");
@@ -86,6 +79,25 @@ const AddProductModal = () => {
   // Define function that handles the creation of a product, if a user submits the product form
   const addProduct = async (e: any) => {
     e.preventDefault();
+    if (!(String(productName).trim().length > 1)) {
+      toast.error("Short/invalid product name");
+      return;
+    } else if (!(Number(productPrice) > 0)) {
+      toast.error("Invalid product price. Must be greater than 0");
+      return;
+      // images must start with https://
+    } else if (!(String(productImage).trim().length > 8)) {
+      toast.error("Invalid Product image url");
+      return;
+    } else if (!(String(productLocation).trim().length > 2 )) {
+      toast.error("Short/invalid product location")
+      return;
+    } else if (!(String(productDescription).trim().length > 3)) {
+      toast.error("Short/invalid product description");
+      return;
+    } else {
+    }
+
     try {
       // Display a notification while the product is being added to the marketplace
       await toast.promise(handleCreateProduct(), {
@@ -226,7 +238,7 @@ const AddProductModal = () => {
                     {/* Button to add the product to the marketplace */}
                     <button
                       type="submit"
-                      disabled={!!loading || !isComplete || !createProduct}
+                      disabled={!!loading || !createProduct}
                       className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"
                     >
                       {loading ? loading : "Create"}
