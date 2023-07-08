@@ -120,6 +120,7 @@ const AddProductModal = () => {
   const { data: cusdBalance } = useBalance({
     address,
     token: erc20Instance.address as `0x${string}`,
+    watch: true,
   });
 
   // If the user is connected and has a balance, display the balance
