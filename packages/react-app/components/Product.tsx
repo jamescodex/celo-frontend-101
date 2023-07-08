@@ -153,7 +153,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
       // Handle errors that might come up
     } catch (e: any) {
       console.log({e});
-      setError(e?.reason || e?.message || rated? "You have already rated this product": "Something went wrong. Please try again.");
+      setError(e?.reason || e?.message || "Something went wrong. Please try again.");
     } finally {
       setLoading(null)
     }
@@ -209,7 +209,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
           </div>
           {/* Product Rate */}
           <div className="ml-2">
-            Product rating: {Number(product.rateCount/product.ratersCount).toFixed(2)}
+            Product rating: {Number(product.rateCount/product.ratersCount).toFixed(1)}
           </div>
         </div>
         <div className="border rounded h-[60px] flex justify-around items-center">
