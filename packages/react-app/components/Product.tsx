@@ -209,7 +209,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
           </div>
           {/* Product Rate */}
           <div className="ml-2">
-            Product rating: {product.rateCount/product.ratersCount}
+            Product rating: {Number(product.rateCount/product.ratersCount).toFixed(2)}
           </div>
         </div>
         <div className="border rounded h-[60px] flex justify-around items-center">
