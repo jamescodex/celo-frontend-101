@@ -18,6 +18,7 @@ import { identiconTemplate } from "@/helpers";
 import { useContractApprove } from "@/hooks/contract/useApprove";
 import { useContractCall } from "@/hooks/contract/useContractRead";
 import { useContractSend } from "@/hooks/contract/useContractWrite";
+import { useContractRate } from "@/hooks/contract/useContractRate";
 import { StarIcon } from "@heroicons/react/24/solid";
 
 // Define the interface for the product, an interface is a type that describes the properties of an object
@@ -46,7 +47,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
   // Use the useContractApprove hook to approve the spending of the product's price, for the ERC20 cUSD contract
   const { writeAsync: approve } = useContractApprove(product?.price?.toString() || "0");
   // Use the useContractSend hook to rate a product in the marketplace
-  const {writeAsync} = useContractSend("rateProduct", [Number(id), Number(5)]);
+  const {writeAsync} = useContractRate([Number(id), Number(5)]);
   // use the useContractCall hook to check if user has rated a product
   const {data: rated } = useContractCall("checkRate", [id], true, address);
   // Use the useConnectModal hook to trigger the wallet connect modal
@@ -199,7 +200,7 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
           <div className="border rounded-md p-2 font-mono font-semibold max-h-[100px] text-ellipsis overflow-hidden">{product.description}</div>
         </div>
         {/* Product rating section */}
-        <div className="border h-[75px] rounded flex flex-col">
+        <div className="border h-[95px] rounded flex flex-col">
           <div className="flex gap-4 h-[60px] justify-center items-center border">
             <StarIcon className="w-[40px] h-[35px] outline-1 hover:w-[45px] hover:h-[45px] text-yellow-400 cursor-pointer hover:-rotate-[145deg] transition duration-300 ease-in-out" onClick={async () => await rateProduct(Number(1))}/>
             <StarIcon className="w-[40px] h-[35px] outline-1 hover:w-[45px] hover:h-[45px] text-yellow-400 cursor-pointer hover:-rotate-[145deg] transition duration-300 ease-in-out" onClick={async () => await rateProduct(Number(2))}/>
@@ -209,7 +210,10 @@ const Product = ({ id, setError, setLoading, clear }: any) => {
           </div>
           {/* Product Rate */}
           <div className="ml-2">
-            Product rating: {Number(product.rateCount/product.ratersCount).toFixed(1)}
+            Rating score: {Number(product.rateCount/product.ratersCount).toFixed(1)}/5.0
+          </div>
+          <div className="ml-2">
+            Rated by {product.ratersCount} user(s)
           </div>
         </div>
         <div className="border rounded h-[60px] flex justify-around items-center">
